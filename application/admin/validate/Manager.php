@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\validate;
 use think\Validate;
-class Admin extends Validate{
+class Manager extends Validate{
     protected $rule=[
       'username'=>'require|max:6',
         //'password'=>''
