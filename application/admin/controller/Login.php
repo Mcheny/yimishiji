@@ -8,7 +8,7 @@ class Login extends Controller{
     public function login(){
         $data = [
             'username' => input('username'),
-            'password' => input('username'),
+            'password' => input('password'),
             'code' => input('code'),
         ];
         //验证用户名,密码和验证码
@@ -26,15 +26,16 @@ class Login extends Controller{
             return $this->error('验证码错误，请重新输入...');
         }
         //判断用户名密码是否存在
-        $arr = db('all_shop')->where(['username'=>$data['username']])->find();
+        $arr = db('manager')->where(['username'=>$data['username']])->find();
 
         if(!$arr){
             return $this->error('用户名或密码错误，请重新输入...');
         }
         if($arr['password']!=md5($data['password'])){
-            return $this->error('用户名或密码错误，请重新输入...');
+            return $this->error('用户名或密码错误111，请重新输入...');
         }
-        session('admin',$arr);
-            return $this->success('登录成功，极速加载中...');
+
+        session('manager',$arr);
+            return $this->success('登录成功，极速加载中...',url('Index/index'));
     }
 }
