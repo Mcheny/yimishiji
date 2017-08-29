@@ -19,15 +19,25 @@
 
 <body>
     <div class="login-container animated fadeInDown">
-        <form action="" method="post">
+        <form action="{:url('Login/index')}" method="post">
             <div class="loginbox bg-white">
                 <div class="loginbox-title">SIGN IN</div>
+
                 <div class="loginbox-textbox">
                     <input value="admin" class="form-control" placeholder="username" name="username" type="text">
                 </div>
+
                 <div class="loginbox-textbox">
                     <input class="form-control" placeholder="password" name="password" type="password">
                 </div>
+
+                <div class="loginbox-textbox">
+                    <input class="form-control" placeholder="验证码" name="code" type="text">
+                </div>
+                <div style="margin-left: 39px;">
+                    <img src="{:captcha_src()}" onclick="this.src='{:captcha_src()}'" alt="captcha">
+                </div>
+
                 <div class="loginbox-submit">
                     <input class="btn btn-primary btn-block" value="Login" type="submit">
                 </div>
