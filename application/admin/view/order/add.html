@@ -5,75 +5,134 @@
     <div class="page-container">
         <!-- Page Sidebar -->
         {:widget('Blog/left')}
-            <!-- /Page Sidebar -->
-            <!-- Page Content -->
-            <div class="page-content">
-                <!-- Page Breadcrumb -->
-                <div class="page-breadcrumbs">
-                    <ul class="breadcrumb">
-                                        <li>
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
                         <a href="#">系统</a>
                     </li>
-                                        <li>
-                        <a href="#">用户管理</a>
+                    <li>
+                        <a href="#">订单管理</a>
                     </li>
-                                        <li class="active">添加用户</li>
-                                        </ul>
-                </div>
-                <!-- /Page Breadcrumb -->
-
-                <!-- Page Body -->
-                <div class="page-body">
-                    
-<div class="row">
-    <div class="col-lg-12 col-sm-12 col-xs-12">
-        <div class="widget">
-            <div class="widget-header bordered-bottom bordered-blue">
-                <span class="widget-caption">新增用户</span>
+                    <li class="active">添加商品</li>
+                </ul>
             </div>
-            <div class="widget-body">
-                <div id="horizontal-form">
-                    <form class="form-horizontal" role="form" action="" method="post">
-                        <div class="form-group">
-                            <label for="username" class="col-sm-2 control-label no-padding-right">用户名</label>
-                            <div class="col-sm-6">
-                                <input class="form-control" id="username" placeholder="" name="username" required="" type="text">
-                            </div>
-                            <p class="help-block col-sm-4 red">* 必填</p>
-                        </div>
+            <!-- /Page Breadcrumb -->
 
-                        <div class="form-group">
-                            <label for="group_id" class="col-sm-2 control-label no-padding-right">用户角色</label>
-                            <div class="col-sm-6">
-                                <select name="group_id" style="width: 100%;">
-                                                                        <option selected="selected" value="8">测试</option>
-                                                                    </select>
+            <!-- Page Body -->
+            <div class="page-body">
+
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                            <div class="widget-header bordered-bottom bordered-blue">
+                                <span class="widget-caption">新增商品</span>
                             </div>
-                        </div>  
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">保存信息</button>
+                            <div class="widget-body">
+                                <div id="horizontal-form">
+                                    <form class="form-horizontal" role="form" action="" method="post">
+                                        <div class="form-group">
+                                            <label for="username" class="col-sm-2 control-label no-padding-right">商品名称</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="goods_name" placeholder="" name="goods_name" required="" type="text">
+                                            </div>
+                                            <p class="help-block col-sm-4 red">* 必填</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="group_id" class="col-sm-2 control-label no-padding-right">类别</label>
+                                            <div class="col-sm-6">
+                                                <select name="cate_id" style="width: 100%;">
+                                                    <option selected="selected" value="8">--请选择--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username" class="col-sm-2 control-label no-padding-right">售价</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="sell_price" placeholder="" name="sell_price" required="" type="text">
+                                            </div>
+                                            <p class="help-block col-sm-4 red">* 必填</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username" class="col-sm-2 control-label no-padding-right">市场价</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="market_price" placeholder="" name="market_price" required="" type="text">
+                                            </div>
+                                            <p class="help-block col-sm-4 red">* 必填</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username" class="col-sm-2 control-label no-padding-right">库存</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="store" placeholder="" name="store" required="" type="text">
+                                            </div>
+                                            <p class="help-block col-sm-4 red">* 必填</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username" class="col-sm-2 control-label no-padding-right">冻结库存</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="freez" placeholder="" name="freez" required="" type="text">
+                                            </div>
+                                            <p class="help-block col-sm-4 red">* 必填</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username" class="col-sm-2 control-label no-padding-right">简介</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="desc" placeholder="" name="desc" required="" type="text">
+                                            </div>
+                                            <p class="help-block col-sm-4 red">* 必填</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <div id="sc_img" style="position: relative;left: 195px;width: 80px;height: 80px;background-color: darkgrey">
+                                                <img id="preview" src="" width="150" height="180" style="display: block; width: 80px; height: 80px;">
+                                            </div>
+                                            <label for="username" class="col-sm-2 control-label no-padding-right" >图片</label>
+                                            <input class="col-sm-6" input type="file" name="img" id="doc" style="width:150px;" onchange="filefujianChange(this);">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="is_show" class="col-sm-2 control-label no-padding-right">是否上架</label>
+
+                                            <div class="col-xs-4">
+                                                <label>
+                                                    <input class="checkbox-slider slider-icon yesno" name="is_show" checked="checked" type="checkbox">
+                                                    <span class="text"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username" class="col-sm-2 control-label no-padding-right">描述</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="content" placeholder="" name="content" required="" type="text">
+                                            </div>
+                                            <p class="help-block col-sm-4 red">* 必填</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default">保存信息</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
+
             </div>
+            <!-- /Page Body -->
         </div>
+        <!-- /Page Content -->
     </div>
 </div>
-
-                </div>
-                <!-- /Page Body -->
-            </div>
-            <!-- /Page Content -->
-		</div>	
-	</div>
 <script src="__STATIC__/admin/style/jquery_002.js"></script>
 <script src="__STATIC__/admin/style/bootstrap.js"></script>
 <script src="__STATIC__/admin/style/jquery.js"></script>
 <!--Beyond Scripts-->
 <script src="__STATIC__/admin/style/beyond.js"></script>
-    
+
 
 
 </body></html>

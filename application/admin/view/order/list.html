@@ -5,98 +5,134 @@
     <div class="page-container">
         <!-- Page Sidebar -->
         {:widget('Blog/left')}
-            <!-- /Page Sidebar -->
-            <!-- Page Content -->
-            <div class="page-content">
-                <!-- Page Breadcrumb -->
-                <div class="page-breadcrumbs">
-                    <ul class="breadcrumb">
-                                        <li>
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
                         <a href="#">系统</a>
                     </li>
-                                        <li class="active">用户管理</li>
-                                        </ul>
-                </div>
-                <!-- /Page Breadcrumb -->
-
-                <!-- Page Body -->
-                <div class="page-body">
-                    
-<button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '/admin/user/add.html'"> <i class="fa fa-plus"></i> Add
-</button>
-<div class="row">
-    <div class="col-lg-12 col-sm-12 col-xs-12">
-        <div class="widget">
-            <div class="widget-body">
-                <div class="flip-scroll">
-                    <table class="table table-bordered table-hover">
-                        <thead class="">
-                            <tr>
-                                <th class="text-center">ID</th>
-                                <th class="text-center">用户名称</th>
-                                <th class="text-center">操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                                                        <tr>
-                                <td align="center">6</td>
-                                <td align="center">test</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/6.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td align="center">7</td>
-                                <td align="center">aaaaaa</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/7.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/7.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td align="center">8</td>
-                                <td align="center">bbb</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/8.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/8.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                    </tbody>
-                    </table>
-                </div>
-                <div>
-                	                </div>
+                    <li class="active">订单管理</li>
+                </ul>
             </div>
+            <!-- /Page Breadcrumb -->
+
+            <!-- Page Body -->
+            <div class="page-body">
+
+                条件查询：<select><option value="volvo">--请选择--</option>
+                <option >订单号</option>
+                <option >地址</option>
+                <option >下单时间</option> </select>
+                <input type="search"class="" value="请输入"> <button type="button"  class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('Goods/add')}'"> <i class="fa fa-plus"></i>查询
+            </button>
+
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                            <div class="widget-body">
+                                <div class="flip-scroll">
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="">
+                                        <tr>
+                                            <th class="text-center">订单号</th>
+                                            <th class="text-center">总价</th>
+                                            <th class="text-center">收货人</th>
+                                            <th class="text-center">联系电话</th>
+                                            <th class="text-center">订单状态</th>
+                                            <th class="text-center">支付状态</th>
+                                            <th class="text-center">下单时间</th>
+                                            <th class="text-center">操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td align="center">6</td>
+                                            <td align="center">test</td>
+                                            <td align="center">test</td>
+                                            <td align="center">test</td>
+                                            <td align="center">test</td>
+                                            <td align="center">test</td>
+                                            <td align="center">test</td>
+                                            <td align="center">
+                                                <a href="{:url('Order/edit')}" class="btn btn-primary btn-sm shiny">
+                                                    <i class="fa fa-edit"></i> 编辑
+                                                </a>
+                                                <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')" class="btn btn-danger btn-sm shiny">
+                                                    <i class="fa fa-trash-o"></i> 删除
+                                                </a>
+                                                <a  class="btn btn-primary btn-sm shiny" id="xiq">
+                                                    <i class="fa fa-edit"></i>查看详情</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--此处隐藏一个弹出框-->
+                                    <div class="m-modal">
+                                        <div class="m-modal-dialog">
+                                            <div class="m-top">
+                                                <h4 class="m-modal-title">
+                                                    商品详情
+                                                </h4>
+                                                <span class="m-modal-close">&times;</span>
+                                            </div>
+                                            <div class="m-middle">
+                                                <!--content-->
+                                                <p>订单号</p>
+                                                <p>总价</p>
+                                                <p>订单人</p>
+                                                <p>收货人</p>
+                                                <p>联系电话</p>
+                                                <p>地区</p>
+                                                <p>地址</p>
+                                                <p>留言</p>
+                                                <p>订单状态</p>
+                                                <p>支付状态</p>
+                                                <p>支付方式</p>
+                                                <p>下单时间</p>
+                                                <p>最后一次修改人</p>
+                                                <p>最后一次修改时间</p>
+
+                                            </div>
+                                            <div class="m-bottom">
+                                                <!--<button class="m-btn-sure">确定</button>-->
+                                                <button class="m-btn-cancel">确定</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--到这里结束-->
+                                    <script>
+                                        $(function () {
+                                            var m1 = new MyModal.modal();
+                                            $('#xiq').on("click", function() {
+                                                m1.show();
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /Page Body -->
         </div>
+        <!-- /Page Content -->
     </div>
 </div>
 
-                </div>
-                <!-- /Page Body -->
-            </div>
-            <!-- /Page Content -->
-		</div>	
-	</div>
 
 <script src="__STATIC__/admin/style/jquery_002.js"></script>
 <script src="__STATIC__/admin/style/bootstrap.js"></script>
 <script src="__STATIC__/admin/style/jquery.js"></script>
 <!--Beyond Scripts-->
 <script src="__STATIC__/admin/style/beyond.js"></script>
-    
+
 
 
 </body></html>
