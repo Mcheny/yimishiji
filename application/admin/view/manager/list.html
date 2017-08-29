@@ -1,10 +1,11 @@
 {:widget('Blog/header')}
-<!-- /头部 -->
 
-<div class="main-container container-fluid">
-    <div class="page-container">
-        <!-- Page Sidebar -->
-        {:widget('Blog/left')}
+	<!-- /头部 -->
+	
+	<div class="main-container container-fluid">
+		<div class="page-container">
+			            <!-- Page Sidebar -->
+            {:widget('Blog/left')}
             <!-- /Page Sidebar -->
             <!-- Page Content -->
             <div class="page-content">
@@ -12,9 +13,9 @@
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
                                         <li>
-                        <a href="#">系统</a>
+                        <a href="{:url('Index/index')}">系统</a>
                     </li>
-                                        <li class="active">用户管理</li>
+                                        <li class="active">管理员管理</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -22,7 +23,7 @@
                 <!-- Page Body -->
                 <div class="page-body">
                     
-<button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '/admin/user/add.html'"> <i class="fa fa-plus"></i> Add
+<button type="button" tooltip="添加管理员" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url(\'Manager/add\')}'"> <i class="fa fa-plus"></i> Add
 </button>
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12">
@@ -33,53 +34,37 @@
                         <thead class="">
                             <tr>
                                 <th class="text-center">ID</th>
-                                <th class="text-center">用户名称</th>
+                                <th class="text-center">管理员名称</th>
+                                <th class="text-center">管理员角色</th>
+                                <th class="text-center">是否冻结</th>
                                 <th class="text-center">操作</th>
                             </tr>
                         </thead>
                         <tbody>
+                        {foreach $data as $v}
                                                         <tr>
-                                <td align="center">6</td>
-                                <td align="center">test</td>
+                                <td align="center">{$v.id}</td>
+                                <td align="center">{$v.username}</td>
+                                <td align="center">{$v.rolename}</td>
+                                <td align="center">{$v.is_lock==1?'是':'否'}</td>
                                 <td align="center">
-                                    <a href="/admin/user/edit/id/6.html" class="btn btn-primary btn-sm shiny">
+
+                                    <a href="{:url('Manager/edit',['id'=>$v.id])}" class="btn btn-primary btn-sm shiny">
                                         <i class="fa fa-edit"></i> 编辑
                                     </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')" class="btn btn-danger btn-sm shiny">
+                                    <a href="#" onClick="warning('确实要删除吗', '{:url(\'Manager/del\',[\'id\'=>$v.id])}')" class="btn btn-danger btn-sm shiny">
                                         <i class="fa fa-trash-o"></i> 删除
                                     </a>
                                 </td>
                             </tr>
-                                                        <tr>
-                                <td align="center">7</td>
-                                <td align="center">aaaaaa</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/7.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/7.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td align="center">8</td>
-                                <td align="center">bbb</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/8.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/8.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
+                              {/foreach}
                                                     </tbody>
                     </table>
                 </div>
                 <div>
                 	                </div>
             </div>
+            {$data->render()}
         </div>
     </div>
 </div>
@@ -91,11 +76,12 @@
 		</div>	
 	</div>
 
-<script src="__STATIC__/admin/style/jquery_002.js"></script>
-<script src="__STATIC__/admin/style/bootstrap.js"></script>
-<script src="__STATIC__/admin/style/jquery.js"></script>
-<!--Beyond Scripts-->
-<script src="__STATIC__/admin/style/beyond.js"></script>
+	    <!--Basic Scripts-->
+    <script src="__STATIC__/admin/style/jquery_002.js"></script>
+    <script src="__STATIC__/admin/style/bootstrap.js"></script>
+    <script src="__STATIC__/admin/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__STATIC__/admin/style/beyond.js"></script>
     
 
 
