@@ -16,7 +16,7 @@ class Manager extends Controller {
     public function index(){
         $data = db('manager')
             ->alias('m')
-            ->field('m.id,m.username,m.password,m.is_lock,r.rolename')
+            ->field('m.id,m.username,m.password,m.role_id,m.is_lock,r.rolename')
             ->join('role r', 'm.role_id=r.role_id')
             ->paginate(2);
         //echo db()->getLastSql();exit;
@@ -72,10 +72,6 @@ class Manager extends Controller {
 
     public function doEdit()
     {
-//        $username=input('username');
-//        $password=input('password');
-//        $role_id =input('role_id');
-//        $id =input('id');
         if (request()->isPost()) {
             $data = [
                 'username' => input('username'),
@@ -83,10 +79,8 @@ class Manager extends Controller {
                 'role_id' => input('role_id'),
                 'id' => input('id'),
             ];
-//            $data['username'] = $username;
-//            $data['id'] = $id;
             if ('password' != '') {
-                $data['password'] = md5('password');
+                $data['password'] = md5(input('password'));
 
             }
             //判断state状态
@@ -95,9 +89,7 @@ class Manager extends Controller {
             } else {
                 $data['is_lock'] = 0;
             }
-            if ('role_id' == '1') {
-                return $this->error('超级管理员不能冻结');
-            }
+
 
             //验证
             $validate = validate('Manager');
@@ -105,12 +97,20 @@ class Manager extends Controller {
                 return $this->error($validate->getError());
             }
 
+           // dump($data);exit;
+            if (input('id') == '1' &&  $data['is_lock'] = 1 ) {
+                return $this->error('超级管理员不能冻结');
+            }
+//            dump('id');exit;
             $res = db('manager')->update($data);
+
             if ($res !== false) {
                 return $this->success('修改成功', url('Manager/index'));
+
             } else {
                 return $this->error('修改失败');
             }
+
         }
     }
     public function del(){

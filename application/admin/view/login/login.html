@@ -1,58 +1,144 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><!--Head--><head>
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
+
+
+<head>
+
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="login page">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!--Basic Styles-->
-    <link href="style/bootstrap.css" rel="stylesheet">
-    <link href="style/font-awesome.css" rel="stylesheet">
-    <!--Beyond styles-->
-    <link id="beyond-link" href="style/beyond.css" rel="stylesheet">
-    <link href="style/demo.css" rel="stylesheet">
-    <link href="style/animate.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{$Think.config.object_name} | 一米市集 </title>
+    <link rel="icon" type="image/ico" href="__STATIC__/admin/images/favicon.ico"/>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ============================================
+    ================= Stylesheets ===================
+    ============================================= -->
+    <!-- vendor css files -->
+    <link rel="stylesheet" href="__STATIC__/admin/images/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/admin/images/animate.css">
+    <link rel="stylesheet" href="__STATIC__/admin/images/font-awesome.min.css">
+
+    <!-- project main css files -->
+    <link rel="stylesheet" href="__STATIC__/admin/images/main.css">
+    <!--/ stylesheets -->
+
+
+    <!-- ==========================================
+    ================= Modernizr ===================
+    =========================================== -->
+    <script src="__STATIC__/admin/images/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <!--/ modernizr -->
+
+
 </head>
-<!--Head Ends-->
-<!--Body-->
 
-<body>
-    <div class="login-container animated fadeInDown">
-        <form action="{:url('Login/login')}" method="post">
-            <div class="loginbox bg-white">
-                <div class="loginbox-title">SIGN IN</div>
 
-                <div class="loginbox-textbox">
-                    <input value="admin" class="form-control" placeholder="username" name="username" type="text">
+<body id="minovate" class="appWrapper">
+
+
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<!-- ====================================================
+================= Application Content ===================
+===================================================== -->
+<div id="wrap" class="animsition">
+
+    <div class="page page-core page-login">
+
+        <div class="text-center"><h3 class="text-light text-white"><img src="__STATIC__/admin/images/logoadmin.png"
+                                                                        alt="{$Think.config.object_name} " width="175"
+                                                                        height="68"></h3></div>
+
+        <div class="container w-420 p-15 bg-white mt-40 text-center">
+
+
+            <h2 class="text-light">管理员登陆</h2>
+
+            <form name="form" action="{:url('Login/login')}" class="form-validation mt-20" novalidate
+                  method="POST">
+
+                <div class="form-group">
+                    <input type="text" autocomplete="off" class="form-control" placeholder="管理员账号"
+                           name="username">
                 </div>
 
-                <div class="loginbox-textbox">
-                    <input class="form-control" placeholder="password" name="password" type="password">
+                <div class="form-group">
+                    <input type="password" autocomplete="off" class="form-control" placeholder="密码"
+                           name="password">
                 </div>
 
-                <div class="loginbox-textbox">
+                <div class="form-group">
                     <input class="form-control" placeholder="验证码" name="code" type="text">
                 </div>
-                <div style="margin-left: 39px;">
+                <div style="margin-left: 0px;">
                     <img src="{:captcha_src()}" onclick="this.src='{:captcha_src()}'" alt="captcha">
                 </div>
 
-                <div class="loginbox-submit">
-                    <input class="btn btn-primary btn-block" value="Login" type="submit">
+                <div class="form-group text-left mt-20">
+                    <input type="hidden" class="form-control" name="redirect" value=''>
+                    <input type="submit" class="btn btn-blue b-0 br-2 mr-5" name="login_submit" value="登录">
+
                 </div>
-            </div>
-           
-        </form>
+
+            </form>
+        </div>
+
     </div>
-    <!--Basic Scripts-->
-    <script src="style/jquery.js"></script>
-    <script src="style/bootstrap.js"></script>
-    <script src="style/jquery_002.js"></script>
-    <!--Beyond Scripts-->
-    <script src="style/beyond.js"></script>
+g
+
+</div>
+<!--/ Application Content -->
 
 
+<!-- ============================================
+============== Vendor JavaScripts ===============
+============================================= -->
+<script src="__STATIC__/admin/images/jquery-1.11.2.min.js"></script>
+
+<script src="__STATIC__/admin/images/bootstrap.min.js"></script>
+
+<script src="__STATIC__/admin/images/jRespond.min.js"></script>
+
+<script src="__STATIC__/admin/images/jquery.sparkline.min.js"></script>
+
+<script src="__STATIC__/admin/images/jquery.slimscroll.min.js"></script>
+
+<script src="__STATIC__/admin/images/jquery.animsition.min.js"></script>
+
+<script src="__STATIC__/admin/images/screenfull.min.js"></script>
+<!--/ vendor javascripts -->
 
 
-</body><!--Body Ends--></html>
+<!-- ============================================
+============== Custom JavaScripts ===============
+============================================= -->
+<script src="__STATIC__/admin/images/main.js"></script>
+<!--/ custom javascripts -->
+
+
+<!-- ===============================================
+============== Page Specific Scripts ===============
+================================================ -->
+<script>
+    $(window).load(function () {
+
+
+    });
+</script>
+<!--/ Page Specific Scripts -->
+
+</body>
+</html>
