@@ -10,7 +10,7 @@ class Manager extends Validate{
     protected $rule = [
         'username'  =>  'require|max:25|unique:manager',
         'password' =>  'require',
-        'role_id' =>  'require',
+        'role_id' =>  'require|between:2,4',
 
     ];
 
@@ -24,6 +24,7 @@ class Manager extends Validate{
         'username.unique'     => '管理员名不能重复',
         'password.require'     => '密码不能为空',
         'role_id.require'     => '角色不能为空',
+        'role_id.between'     => '角色不能设为超级管理员',
     ];
 
     /**

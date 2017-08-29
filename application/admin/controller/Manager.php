@@ -70,46 +70,52 @@ class Manager extends Controller {
         return $this->fetch();
     }
 
-    public function doEdit(){
-        $username=input('username');
-        $password=input('password');
-        $role_id =input('role_id');
-        $id =input('id');
-        $data = [];
-        $data['username'] = $username;
-        $data['id'] = $id;
-        if($password != ''){
-            $data['password'] = md5($password);
+    public function doEdit()
+    {
+//        $username=input('username');
+//        $password=input('password');
+//        $role_id =input('role_id');
+//        $id =input('id');
+        if (request()->isPost()) {
+            $data = [
+                'username' => input('username'),
+                'password' => md5(input('password')),
+                'role_id' => input('role_id'),
+                'id' => input('id'),
+            ];
+//            $data['username'] = $username;
+//            $data['id'] = $id;
+            if ('password' != '') {
+                $data['password'] = md5('password');
 
-        }
-        //判断state状态
-        if (input('is_lock') == 'on') {
-            $data['is_lock'] = 1;
-        } else {
-            $data['is_lock'] = 0;
-        }
-        if($role_id == '1'){
-            return $this->error('超级管理员不能冻结');
-        }
+            }
+            //判断state状态
+            if (input('is_lock') == 'on') {
+                $data['is_lock'] = 1;
+            } else {
+                $data['is_lock'] = 0;
+            }
+            if ('role_id' == '1') {
+                return $this->error('超级管理员不能冻结');
+            }
 
-        //验证
-        $validate = validate('Manager');
-        if(!$validate->scene('edit')->check($data)){
-            return $this->error($validate->getError());
-        }
+            //验证
+            $validate = validate('Manager');
+            if (!$validate->scene('edit')->check($data)) {
+                return $this->error($validate->getError());
+            }
 
-        $res = db('manager')->update($data);
-        if($res !== false){
-            return $this->success('修改成功',url('Manager/index'));
-        }else{
-            return $this->error('修改失败');
+            $res = db('manager')->update($data);
+            if ($res !== false) {
+                return $this->success('修改成功', url('Manager/index'));
+            } else {
+                return $this->error('修改失败');
+            }
         }
     }
-
     public function del(){
         $id = input('id');
-        $role_id = input('role_id');
-        if($role_id == '1'){
+        if($id == '1'){
             return $this->error('超级管理员不能删除');
         }
         $res = db('manager')->delete($id);
