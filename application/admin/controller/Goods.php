@@ -7,4 +7,13 @@ class Goods extends Base
     {
     return $this->fetch('list');
     }
+    function add(){
+        return $this->fetch('add');
+    }
+    function edit(){
+        return $this->fetch('edit');
+    }
+    function del(){
+
+    }
 }

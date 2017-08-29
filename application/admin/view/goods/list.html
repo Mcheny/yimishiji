@@ -14,7 +14,7 @@
                                         <li>
                         <a href="#">系统</a>
                     </li>
-                                        <li class="active">用户管理</li>
+                                        <li class="active">商品管理</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -22,7 +22,7 @@
                 <!-- Page Body -->
                 <div class="page-body">
                     
-<button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '/admin/user/add.html'"> <i class="fa fa-plus"></i> Add
+<button type="button" tooltip="添加商品" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('Goods/add')}'"> <i class="fa fa-plus"></i> Add
 </button>
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12">
@@ -33,7 +33,14 @@
                         <thead class="">
                             <tr>
                                 <th class="text-center">ID</th>
-                                <th class="text-center">用户名称</th>
+                                <th class="text-center">商品名称</th>
+                                <th class="text-center">售价</th>
+                                <th class="text-center">市场价</th>
+                                <th class="text-center">所属类别</th>
+                                <th class="text-center">库存</th>
+                                <th class="text-center">是否上架</th>
+                                <th class="text-center">修改人</th>
+                                <th class="text-center">修改时间</th>
                                 <th class="text-center">操作</th>
                             </tr>
                         </thead>
@@ -41,41 +48,64 @@
                                                         <tr>
                                 <td align="center">6</td>
                                 <td align="center">test</td>
+                                <td align="center">test</td>
+                                <td align="center">test</td>
+                                <td align="center">test</td>
+                                <td align="center">test</td>
+                                <td align="center">test</td>
+                                <td align="center">test</td>
+                                <td align="center">test</td>
                                 <td align="center">
-                                    <a href="/admin/user/edit/id/6.html" class="btn btn-primary btn-sm shiny">
+                                    <a href="{:url('Goods/edit')}" class="btn btn-primary btn-sm shiny">
                                         <i class="fa fa-edit"></i> 编辑
                                     </a>
                                     <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')" class="btn btn-danger btn-sm shiny">
                                         <i class="fa fa-trash-o"></i> 删除
                                     </a>
+                                    <a  class="btn btn-primary btn-sm shiny" id="xiq">
+                                        <i class="fa fa-edit"></i>查看详情</a>
                                 </td>
                             </tr>
-                                                        <tr>
-                                <td align="center">7</td>
-                                <td align="center">aaaaaa</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/7.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/7.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td align="center">8</td>
-                                <td align="center">bbb</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/8.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/8.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                    </tbody>
+                                 </tbody>
                     </table>
+                    <!--此处隐藏一个弹出框-->
+                    <div class="m-modal">
+                        <div class="m-modal-dialog">
+                            <div class="m-top">
+                                <h4 class="m-modal-title">
+                                    商品详情
+                                </h4>
+                                <span class="m-modal-close">&times;</span>
+                            </div>
+                            <div class="m-middle">
+                                <!--content-->
+                                <p>商品名称</p>
+                                <p>售价</p>
+                                <p>市场价</p>
+                                <p>所属类别</p>
+                                <p>库存</p>
+                                <p>图片</p>
+                                <p>是否上架</p>
+                                <p>修改时间</p>
+                                <p>修改人</p>
+                                <p>描述</p>
+
+                            </div>
+                            <div class="m-bottom">
+                                <!--<button class="m-btn-sure">确定</button>-->
+                                <button class="m-btn-cancel">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--到这里结束-->
+                    <script>
+                        $(function () {
+                            var m1 = new MyModal.modal();
+                            $('#xiq').on("click", function() {
+                                m1.show();
+                            });
+                        });
+                    </script>
                 </div>
                 <div>
                 	                </div>
@@ -90,6 +120,7 @@
             <!-- /Page Content -->
 		</div>	
 	</div>
+
 
 <script src="__STATIC__/admin/style/jquery_002.js"></script>
 <script src="__STATIC__/admin/style/bootstrap.js"></script>
