@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 namespace app\admin\controller;
 use app\admin\model\Cate as CateModel;
 use think\Controller;
@@ -104,3 +105,20 @@ if($res){
 }
 }
 }
+=======
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2017/8/29
+ * Time: 14:48
+ */
+namespace app\admin\controller;
+
+use think\Controller;
+
+class Cate extends Controller{
+    public function index(){
+        return $this->fetch();
+    }
+}
+>>>>>>> cff8b9b18232eb0bc41c24e8df57fcd87567407a

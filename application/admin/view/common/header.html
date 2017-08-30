@@ -68,7 +68,7 @@
                                     <img src="__STATIC__/admin/images/adam-jansen.jpg">
                                 </div>
                                 <section>
-                                    <h2><span class="profile"><span>{$Request.session.admin.username}</span></span></h2>
+                                    <h2><span class="profile"><span>{$Request.session.manager.username}</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
@@ -80,7 +80,7 @@
                                     </a>
                                 </li>
                                 <li class="dropdown-footer">
-                                    <a href="/admin/user/changePwd.html">
+                                    <a href="{:url('Manager/edit',['id'=>$Request.session.manager.id])}">
                                         修改密码
                                     </a>
                                 </li>

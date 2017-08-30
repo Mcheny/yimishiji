@@ -1,10 +1,20 @@
 {:widget('Blog/header')}
+<<<<<<< HEAD
 <!-- /头部 -->
 
 <div class="main-container container-fluid">
     <div class="page-container">
         <!-- Page Sidebar -->
         {:widget('Blog/left')}
+=======
+
+	<!-- /头部 -->
+	
+	<div class="main-container container-fluid">
+		<div class="page-container">
+			            <!-- Page Sidebar -->
+            {:widget('Blog/left')}
+>>>>>>> cff8b9b18232eb0bc41c24e8df57fcd87567407a
             <!-- /Page Sidebar -->
             <!-- Page Content -->
             <div class="page-content">
@@ -12,9 +22,15 @@
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
                                         <li>
+<<<<<<< HEAD
                         <a href="#">系统</a>
                     </li>
                                         <li class="active">用户管理</li>
+=======
+                        <a href="{:url('Index/index')}">系统</a>
+                    </li>
+                                        <li class="active">分类管理</li>
+>>>>>>> cff8b9b18232eb0bc41c24e8df57fcd87567407a
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -22,7 +38,11 @@
                 <!-- Page Body -->
                 <div class="page-body">
                     
+<<<<<<< HEAD
 <button type="button" tooltip="添加顶级" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('Cate/raddCate')}'"> <i class="fa fa-plus"></i> Add
+=======
+<button type="button" tooltip="添加分类" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url(\'Manager/add\')}'"> <i class="fa fa-plus"></i> Add
+>>>>>>> cff8b9b18232eb0bc41c24e8df57fcd87567407a
 </button>
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12">
@@ -33,14 +53,21 @@
                         <thead class="">
                             <tr>
                                 <th class="text-center">ID</th>
+<<<<<<< HEAD
                                 <th class="text-center">名称</th>
                                 <th class="text-center">父级ID</th>
                                 <th class="text-center">所在目录</th>
                                 <th class="text-center">级别</th>
+=======
+                                <th class="text-center">分类名称</th>
+                                <th class="text-center">分类角色</th>
+                                <th class="text-center">是否冻结</th>
+>>>>>>> cff8b9b18232eb0bc41c24e8df57fcd87567407a
                                 <th class="text-center">操作</th>
                             </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD
                         {foreach $data.data as $val}<tr>
                                 <td align="center">{$val.id}</td>
                                 <td align="center">{$val.name}</td>
@@ -55,17 +82,41 @@
                                         <i class="fa fa-edit"></i> 添加子分类
                                     </a>
                                     <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')" class="btn btn-danger btn-sm shiny">
+=======
+                        {foreach $data as $v}
+                                                        <tr>
+                                <td align="center">{$v.id}</td>
+                                <td align="center">{$v.username}</td>
+                                <td align="center">{$v.rolename}</td>
+                                <td align="center">{$v.is_lock==1?'是':'否'}</td>
+                                <td align="center">
+
+                                    <a href="{:url('Manager/edit',['id'=>$v.id])}" class="btn btn-primary btn-sm shiny">
+                                        <i class="fa fa-edit"></i> 编辑
+                                    </a>
+                                    <a href="#" onClick="warning('确实要删除吗', '{:url(\'Manager/del\',[\'id\'=>$v.id])}')" class="btn btn-danger btn-sm shiny">
+>>>>>>> cff8b9b18232eb0bc41c24e8df57fcd87567407a
                                         <i class="fa fa-trash-o"></i> 删除
                                     </a>
                                 </td>
                             </tr>
+<<<<<<< HEAD
                         {/foreach}
+=======
+                              {/foreach}
+>>>>>>> cff8b9b18232eb0bc41c24e8df57fcd87567407a
                                                     </tbody>
                     </table>
                 </div>
                 <div>
+<<<<<<< HEAD
                 	{$data.page;}                </div>
             </div>
+=======
+                	                </div>
+            </div>
+            {$data->render()}
+>>>>>>> cff8b9b18232eb0bc41c24e8df57fcd87567407a
         </div>
     </div>
 </div>
@@ -77,11 +128,20 @@
 		</div>	
 	</div>
 
+<<<<<<< HEAD
 <script src="__STATIC__/admin/style/jquery_002.js"></script>
 <script src="__STATIC__/admin/style/bootstrap.js"></script>
 <script src="__STATIC__/admin/style/jquery.js"></script>
 <!--Beyond Scripts-->
 <script src="__STATIC__/admin/style/beyond.js"></script>
+=======
+	    <!--Basic Scripts-->
+    <script src="__STATIC__/admin/style/jquery_002.js"></script>
+    <script src="__STATIC__/admin/style/bootstrap.js"></script>
+    <script src="__STATIC__/admin/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__STATIC__/admin/style/beyond.js"></script>
+>>>>>>> cff8b9b18232eb0bc41c24e8df57fcd87567407a
     
 
 
