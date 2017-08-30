@@ -18,7 +18,7 @@
                                         <li>
                         <a href="{:url('Manager/index')}">管理员管理</a>
                     </li>
-                                        <li class="active">添加管理员</li>
+                                        <li class="active">修改管理员</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -30,7 +30,7 @@
     <div class="col-lg-12 col-sm-12 col-xs-12">
         <div class="widget">
             <div class="widget-header bordered-bottom bordered-blue">
-                <span class="widget-caption">新增管理员</span>
+                <span class="widget-caption">修改管理员</span>
             </div>
             <div class="widget-body">
                 <div id="horizontal-form">
@@ -56,16 +56,18 @@
                                 <select name="role_id" style="width: 100%;">
                                     <option value="">--请选择--</option>
                                     {foreach $role as $v}
-                                    <option value="{$v.role_id}" {if condition ="$data.role_id eq $v.role_id"}selected="selected" {/if}>{$v.rolename}</option>
+                                    {if condition="$v.role_id neq '1'"}
+                                    <option value="{$v.role_id}" {if condition ="$data.role_id eq $v.role_id "}selected="selected" {/if}>{$v.rolename}</option>
+                                    {/if}
                                     {/foreach}
                                 </select>
                             </div>
                             <p class="help-block col-sm-4 red">* 必填</p>
                         </div>
 
+                        {if condition="$v.role_id neq '1'"}
                         <div class="form-group">
                             <label for="is_lock" class="col-sm-2 control-label no-padding-right">是否冻结</label>
-
                             <div class="col-xs-4">
                                 <label>
                                     <input class="checkbox-slider slider-icon yesno" name="is_lock" {if condition ="$data.is_lock eq 1"}checked="checked" {/if}type="checkbox">
@@ -73,7 +75,7 @@
                                 </label>
                             </div>
                         </div>
-
+                        {/if}
 
                         <input type="hidden" name="id" value="{$data.id}">
                         <div class="form-group">
