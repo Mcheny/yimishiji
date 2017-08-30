@@ -1,4 +1,5 @@
 <?php
+
 namespace app\admin\controller;
 use app\admin\model\Cate as CateModel;
 use think\Controller;
@@ -104,3 +105,4 @@ if($res){
 }
 }
 }
+
