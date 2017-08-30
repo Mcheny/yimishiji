@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>购物车_一米市集</title>
-    <?php
-        require('head.php');
-    ?>
-    <link rel="stylesheet" href="./css/cart.css">
+    {:widget('Ipublic/head')}
+    <link rel="stylesheet" href="__STATIC__/index/css/cart.css">
 </head>
 <body>
 <!--顶部-->
@@ -14,23 +12,21 @@
 <!--主要内容-->
 <div class="container">
     <!--头部-->
-    <?php
-        require('header.php');
-    ?>
+    {:widget('Ipublic/header')}
     <!--主模块-->
     <!--购物车为空时-->
     <div class="cart-section section cart-null noSec">
         <div class="head">
             <div class="cart-icon">
                 <h1>
-                    <img src="./img/ym_icon_cart.png" alt="">
+                    <img src="__STATIC__/index/img/ym_icon_cart.png" alt="">
                     购物车
                 </h1>
             </div>
         </div>
         <div class="data">
             <div class="mess">
-                <img src="./img/ym_icon_cart.png" alt="">
+                <img src="__STATIC__/index/img/ym_icon_cart.png" alt="">
                 <p>购物篮中空空的喔,慢慢逛，不要忘记带上「食欲」</p>
             </div>
         </div>
@@ -40,7 +36,7 @@
         <div class="head">
             <div class="cart-icon">
                 <h1>
-                    <img src="./img/ym_icon_cart.png" alt="">
+                    <img src="__STATIC__/index/img/ym_icon_cart.png" alt="">
                     购物车
                 </h1>
             </div>
@@ -79,7 +75,7 @@
                         <!--<input type="checkbox" name="" class="chk">-->
                     <!--</td>-->
                     <!--<td class="sp">-->
-                        <!--<img src="./img/cart_goods1.jpg" alt="">-->
+                        <!--<img src="__STATIC__/index/img/cart_goods1.jpg" alt="">-->
                         <!--<span><a href="">沙拉瓶子 绿3瓶红3瓶</a></span>-->
                     <!--</td>-->
                     <!--<td class="sj">-->
@@ -133,8 +129,6 @@
     </div>
 </div>
 <!--底部、回到顶部按钮、客服按钮-->
-<?php
-    require('footer.php');
-?>
+{:widget('Ipublic/footer')}
 </body>
 </html>
