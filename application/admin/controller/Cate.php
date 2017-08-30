@@ -92,6 +92,7 @@ class  Cate extends Controller {
         $this->assign('data',$arr);
         return $this->fetch('add');
     }
+
     function insertCate(){
         $data=[
             'id'=>input('id'),
@@ -105,3 +106,6 @@ class  Cate extends Controller {
         }
     }
 }
+
+
+

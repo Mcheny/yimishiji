@@ -32,7 +32,7 @@ class Login extends Controller{
             return $this->error('用户名或密码错误，请重新输入...');
         }
         if($arr['password'] != md5($data['password'])){
-            return $this->error('用户名或密码错误1，请重新输入...');
+            return $this->error('用户名或密码错误，请重新输入...');
         }
         if($arr['is_lock'] != 0) {
             return $this->error('该管理员账号已被冻结');
