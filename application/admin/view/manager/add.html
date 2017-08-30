@@ -55,8 +55,10 @@
                             <div class="col-sm-6">
                                 <select name="role_id" style="width: 100%;">
                                     <option value="">--请选择--</option>
+
                                     {foreach $role as $v}
-                                    <option value="{$v.role_id}">{$v.rolename}</option>
+                                    {if condition="$v.role_id neq '1'"}<option value="{$v.role_id}">{$v.rolename}</option>
+                                    {/if}
                                     {/foreach}
                                 </select>
                             </div>
