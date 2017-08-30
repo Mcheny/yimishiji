@@ -68,19 +68,19 @@
                                     <img src="__STATIC__/admin/images/adam-jansen.jpg">
                                 </div>
                                 <section>
-                                    <h2><span class="profile"><span>{$Request.session.manager.username}</span></span></h2>
+                                    <h2><span class="profile"><span>{$Request.session.admin.username}</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <li class="username"><a>David Stevenson</a></li>
                                 <li class="dropdown-footer">
-                                    <a href="{:url('Login/logout')}">
+                                    <a href="{:url('Index/logout')}">
                                         退出登录
                                     </a>
                                 </li>
                                 <li class="dropdown-footer">
-                                    <a href="{:url('Manager/edit',['id'=>$Request.session.manager.id])}">
+                                    <a href="{:url('Manager/edit')}">
                                         修改密码
                                     </a>
                                 </li>
