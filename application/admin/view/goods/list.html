@@ -11,17 +11,15 @@
                 <!-- Page Breadcrumb -->
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
-                                        <li>
+                        <li>
                         <a href="#">系统</a>
                     </li>
-                                        <li class="active">商品管理</li>
-                                        </ul>
+                        <li class="active">商品管理</li>
+                    </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
-
                 <!-- Page Body -->
                 <div class="page-body">
-                    
 <button type="button" tooltip="添加商品" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('Goods/add')}'"> <i class="fa fa-plus"></i> Add
 </button>
 <div class="row">
@@ -45,28 +43,35 @@
                             </tr>
                         </thead>
                         <tbody>
-                                                        <tr>
-                                <td align="center">6</td>
-                                <td align="center">test</td>
-                                <td align="center">test</td>
-                                <td align="center">test</td>
-                                <td align="center">test</td>
-                                <td align="center">test</td>
-                                <td align="center">test</td>
-                                <td align="center">test</td>
-                                <td align="center">test</td>
+                        {foreach $data as $val}
+                        <tr>
+                                <td align="center">{$val.good_id}</td>
+                                <td align="center">{$val.good_name}</td>
+                                <td align="center">{$val.sell_price}</td>
+                                <td align="center">{$val.market_price}</td>
+                                <td align="center">{$val.cate_id}</td>
+                                <td align="center">{$val.store }</td>
+                              {if condition="$val.is_up eq '1'"}<td align="center">上架</td>
+                            {else /}<td align="center">不上架</td>
+                            {/if}
+                                <td align="center">{$val.last_modify_id}</td>
+                                <td align="center">{$val.last_modify_time|date="Y-m-d H:i:s",###}</td>
                                 <td align="center">
+                                    <a href="{:url('Goods/editImg',['id'=>$val.good_id])}" class="btn btn-primary btn-sm shiny">
+                                        <i class="fa fa-edit"></i> 管理图片
+                                    </a>
                                     <a href="{:url('Goods/edit')}" class="btn btn-primary btn-sm shiny">
                                         <i class="fa fa-edit"></i> 编辑
                                     </a>
                                     <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')" class="btn btn-danger btn-sm shiny">
                                         <i class="fa fa-trash-o"></i> 删除
                                     </a>
-                                    <a  class="btn btn-primary btn-sm shiny" id="xiq">
-                                        <i class="fa fa-edit"></i>查看详情</a>
+                                    <span class="xq"><a  class="btn btn-primary btn-sm shiny">
+                                        <i class="fa fa-edit"></i>查看详情</a></span>
                                 </td>
                             </tr>
-                                 </tbody>
+                        {/foreach}
+                        </tbody>
                     </table>
                     <!--此处隐藏一个弹出框-->
                     <div class="m-modal">
@@ -79,16 +84,18 @@
                             </div>
                             <div class="m-middle">
                                 <!--content-->
-                                <p>商品名称</p>
-                                <p>售价</p>
-                                <p>市场价</p>
-                                <p>所属类别</p>
-                                <p>库存</p>
-                                <p>图片</p>
-                                <p>是否上架</p>
-                                <p>修改时间</p>
-                                <p>修改人</p>
-                                <p>描述</p>
+                                <h4>商品名称:{$val.good_id}</h4>
+                                <h4>售价:{$val.good_name}</h4>
+                                <h4>市场价:{$val.sell_price}</h4>
+                                <h4>所属类别:{$val.cate_id}</h4>
+                                <h4>库存:{$val.market_price}</h4>
+                                <h4>冻结库存:</h4>
+                                <h4>图片:</h4>
+                                <h4>简介:</h4>
+                                <h4>是否上架:{$val.is_up}</h4>
+                                <h4>描述:</h4>
+                                <h4>修改时间:{$val.last_modify_time|date="Y-m-d H:i:s",###}</h4>
+                                <h4>修改人:{$val.last_modify_id}</h4>
 
                             </div>
                             <div class="m-bottom">
@@ -101,9 +108,11 @@
                     <script>
                         $(function () {
                             var m1 = new MyModal.modal();
-                            $('#xiq').on("click", function() {
-                                m1.show();
-                            });
+                            for(var i=0;i< $('.xq').length;i++){
+                                $(this).click(function () {
+                                    m1.show();
+                                });
+                            }
                         });
                     </script>
                 </div>
