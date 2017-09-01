@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>购物车_一米市集</title>
-    <?php
-        require('head.php');
-    ?>
-    <link rel="stylesheet" href="./css/cart.css">
+    {:widget('Ipublic/head')}
+    <link rel="stylesheet" href="__STATIC__/index/css/cart.css">
 </head>
 <body>
 <!--顶部-->
@@ -14,15 +12,13 @@
 <!--主要内容-->
 <div class="container">
     <!--头部-->
-    <?php
-        require('header.php');
-    ?>
+    {:widget('Ipublic/header')}
     <!--主模块-->
     <div class="section cart-has noSec">
         <div class="head">
             <div class="cart-icon">
                 <h1>
-                    <img src="./img/ym_icon_cart.png" alt="">
+                    <img src="__STATIC__/index/img/ym_icon_cart.png" alt="">
                     结账
                 </h1>
             </div>
@@ -54,16 +50,16 @@
             </div>
             <!--添加地址表单-->
             <div class="addLocal">
-                <form action="javascript:;">
+                <form action=""  id="message">
                     <p>
                         <input type="text" name="name" placeholder="收货人" class="name">
                         <input type="text" name="phone" placeholder="手机/电话" class="phone">
                     </p>
                     <p>
-                        <select name="province" id="province" disabled class="sec secDis">
+                        <select name="province" id="province"  class="sec secDis">
                             <option value="上海" selected>上海</option>
                         </select>
-                        <select name="city" id="city" disabled class="sec secDis">
+                        <select name="city" id="city" class="sec secDis">
                             <option value="上海市" selected>上海市</option>
                         </select>
                         <select name="zone" id="zone" class="sec">
@@ -73,9 +69,28 @@
                         <input type="text" name="local" placeholder="收货地址" class="local">
                     </p>
                     <p>
-                        <button>保存地址</button>
+                        <button id="addAdress">保存地址</button>
                     </p>
                 </form>
+                <script>
+                    $(function () {
+                        $('#addAdress').click(function () {
+                            $.ajax({
+                                cache: true,
+                                type: "POST",
+                                url:"{:url('Cart/address')}",
+                                data:$('#message').serialize(),
+                                async: false,
+                                error: function(request) {
+                                    alert("添加失败");
+                                },
+                                success: function(data) {
+                                    alert(data.area);
+                                }
+                            });
+                        });
+                    });
+                </script>
             </div>
             <!--收货时间-->
             <div class="model">
@@ -143,14 +158,14 @@
                 <div class="borderAll fk fl">
                     <label>
                         <input type="radio" name="fukuan" class="radio" checked>
-                        <span class="hSpan"><img src="./img/pic_onlinePayment.png" alt=""></span>
+                        <span class="hSpan"><img src="__STATIC__/index/img/pic_onlinePayment.png" alt=""></span>
                     </label>
                 </div>
                 <div class="borderAll fk fl">
                     <label>
 
                         <input type="radio" name="fukuan" class="radio">
-                        <span class="hSpan"><img src="./img/pic_cashOnDelivery.png" alt=""></span>
+                        <span class="hSpan"><img src="__STATIC__/index/img/pic_cashOnDelivery.png" alt=""></span>
                     </label>
 
                 </div>
@@ -160,7 +175,7 @@
                 <p class="hP">商品清单</p>
                 <div class="checkbox qingdan borderD fl">
                     <div class="btnDiv"></div>
-                    <p class="dataP"><img src="./img/cartImg1.jpg" alt=""> <span class="fr" style="margin-right: 30px">共 <span
+                    <p class="dataP"><img src="__STATIC__/index/img/cartImg1.jpg" alt=""> <span class="fr" style="margin-right: 30px">共 <span
                             class="spNum">1</span> 件商品</span></p>
                     <div class="qingdanDiv fl">
                         <div class="left fl">
@@ -179,7 +194,7 @@
                                 <tr>
                                     <td class="hTd1">
                                         <a href="">
-                                            <img src="./img/cartImg1.jpg" alt=""><span>零农残特级百香果6只</span>
+                                            <img src="__STATIC__/index/img/cartImg1.jpg" alt=""><span>零农残特级百香果6只</span>
                                         </a>
                                     </td>
                                     <td class="hTd2"><span>1</span></td>
@@ -238,8 +253,15 @@
                 <hr class="fc">
                 <p class="fc"><span class="fl">应付金额</span><span class="fr">￥<span>58.00</span></span></p>
                 <p class="fc">
-                    <button id="tijiaoBtn" class="fl">订单结算</button>
+                    <button id="tijiaoBtn" class="fl" type="submit">订单结算</button>
                 </p>
+                <script>
+//               $(function () {
+//                   $("form").submit(function(e){
+//                       alert("Submitted");
+//                   });
+//               });
+            </script>
                 <p class="fc"><label><input type="checkbox" name="buzai">不在商品清单上打印价格。</label></p>
             </div>
             <!--保证以上浮动块能正常显示，不会重叠-->
@@ -250,9 +272,7 @@
 </div>
 
 <!--底部、回到顶部按钮、客服按钮-->
-<?php
-require('footer.php');
-?>
+{:widget('Ipublic/footer')}
 
 
 <div class="tishi">
@@ -268,16 +288,16 @@ require('footer.php');
     $('.model .btnD').blur(function () {
         if ($(this).attr('open1') == '0') {
             $(this).next().next().show();
-            $(this).css({"background": "url('./img/checkout_dropdown_open.png') no-repeat right 20px top 5px"});
+            $(this).css({"background": "url('__STATIC__/index/img/checkout_dropdown_open.png') no-repeat right 20px top 5px"});
             $(this).attr('open1', '1');
 
             //关闭其他
             $('.model .btnD').not(this).attr('open1') == '0';
-            $('.model .btnD').not(this).css({"background": "url('./img/checkout_dropdown_closed.png') no-repeat right 20px top 5px"});
+            $('.model .btnD').not(this).css({"background": "url('__STATIC__/index/img/checkout_dropdown_closed.png') no-repeat right 20px top 5px"});
             $('.model .btnD').not(this).attr('open1', '0');
             $('.model .btnD').not(this).next().next().hide();
         } else {
-            $(this).css({"background": "url('./img/checkout_dropdown_closed.png') no-repeat right 20px top 5px"});
+            $(this).css({"background": "url('__STATIC__/index/img/checkout_dropdown_closed.png') no-repeat right 20px top 5px"});
             $(this).attr('open1', '0');
             $(this).next().next().hide();
         }
@@ -287,12 +307,12 @@ require('footer.php');
     $('.youhuiquan .btnDiv').click(function () {
         if ($(this).attr('open1') == '0') {
             $(this).next().next().show(200);
-            $(this).css({"background": "url('./img/checkout_dropdown_open.png') no-repeat"});
+            $(this).css({"background": "url('__STATIC__/index/img/checkout_dropdown_open.png') no-repeat"});
             $(this).parent().animate({'height': '120px'}, 200);
 //            $(this).parent().css({'height':'120px'});
             $(this).attr('open1', '1');
         } else {
-            $(this).css({"background": "url('./img/checkout_dropdown_closed.png') no-repeat"});
+            $(this).css({"background": "url('__STATIC__/index/img/checkout_dropdown_closed.png') no-repeat"});
 //            $(this).parent().css({'height': '45px'});
             $(this).parent().animate({'height': '45px'}, 200);
             $(this).attr('open1', '0');
@@ -306,12 +326,12 @@ require('footer.php');
         if ($(this).attr('open1') == '0') {
             $(this).next().next().show();
             $(this).next().hide();
-            $(this).css({"background": "url('./img/checkout_dropdown_open.png') no-repeat"});
+            $(this).css({"background": "url('__STATIC__/index/img/checkout_dropdown_open.png') no-repeat"});
 //            $(this).parent().animate({'height': '120px'}, 200);
             $(this).parent().css({'height': 'auto'});
             $(this).attr('open1', '1');
         } else {
-            $(this).css({"background": "url('./img/checkout_dropdown_closed.png') no-repeat"});
+            $(this).css({"background": "url('__STATIC__/index/img/checkout_dropdown_closed.png') no-repeat"});
 //            $(this).parent().css({'height': '45px'});
             $(this).next().show();
             $(this).parent().animate({'height': '60px'}, 200);
@@ -324,7 +344,7 @@ require('footer.php');
         this.value = this.value.toUpperCase();
     }).focus(function () {
         $('.model .btnD').attr('open1') == '0';
-        $('.model .btnD').css({"background": "url('./img/checkout_dropdown_closed.png') no-repeat right 20px top 5px"});
+        $('.model .btnD').css({"background": "url('__STATIC__/index/img/checkout_dropdown_closed.png') no-repeat right 20px top 5px"});
         $('.model .btnD').attr('open1', '0');
         $('.model .btnD').next().next().hide();
     });
@@ -333,7 +353,7 @@ require('footer.php');
     $('*').not('.model .btnD').not('.model div').not('.model').not('.model p').not('.model ul').not('.model li').focus(function () {
         //关闭所有
         $('.model .btnD').attr('open1') == '0';
-        $('.model .btnD').css({"background": "url('./img/checkout_dropdown_closed.png') no-repeat right 20px top 5px"});
+        $('.model .btnD').css({"background": "url('__STATIC__/index/img/checkout_dropdown_closed.png') no-repeat right 20px top 5px"});
         $('.model .btnD').attr('open1', '0');
         $('.model .btnD').next().next().hide();
 

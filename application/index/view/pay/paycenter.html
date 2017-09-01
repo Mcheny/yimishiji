@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>收银台_一米市集</title>
-    <?php
-        require('head.php');
-    ?>
-    <link rel="stylesheet" href="./css/cart.css">
+{:widget('Ipublic/head')}
+    <link rel="stylesheet" href="__STATIC__/index/css/cart.css">
 </head>
 <body>
 
@@ -15,15 +13,13 @@
 <!--主要内容-->
 <div class="container">
     <!--头部-->
-    <?php
-    require('header.php');
-    ?>
+    {:widget('Ipublic/header')}
     <!--主模块-->
     <div class="section shouyintai">
         <div class="head">
             <div class="cart-icon">
                 <h1>
-                    <img src="./img/ym_icon_cart.png" alt="">
+                    <img src="__STATIC__/index/img/ym_icon_cart.png" alt="">
                     收银台
                 </h1>
             </div>
@@ -46,7 +42,7 @@
                 <p>
                     <span class="fl">订单生成成功，请选择付款方式</span>
                     <span class="fr">
-                        订单号 <span>170725131533869</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        订单号 <span>{$orderId}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         订单金额 ￥ <span>58.00</span>
                     </span>
                 </p>
@@ -63,9 +59,7 @@
 </div>
 
 <!--底部、回到顶部按钮、客服按钮-->
-<?php
-require('footer.php');
-?>
+{:widget('Ipublic/footer')}
 
 
 </body>

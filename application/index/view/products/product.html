@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>有机巨玫瑰葡萄_一米市集</title>
+    {:widget('Ipublic/head')}
+    <link rel="stylesheet" href="__STATIC__/index/css/product.css">
+</head>
+<body>
+<!--顶部-->
+<div class="top"></div>
+<!--主要内容-->
+<div class="container noSec">
+    <!--头部-->
+    {:widget('Ipublic/header')}
+    <!--主模块-->
+    <div class="main">
+        <div class="row">
+            <div class="fl current">
+                <a href="#" class="sp" style="background-image: url(__STATIC__/index/img/pro_s1.jpg)"></a>
+                <a href="#" class="sp" style="background-image: url(__STATIC__/index/img/pro_s2.jpg)"></a>
+                <a href="#" class="sp" style="background-image: url(__STATIC__/index/img/pro_s3.jpg)"></a>
+                <a href="#" class="sp" style="background-image: url(__STATIC__/index/img/pro_s4.jpg)"></a>
+            </div>
+            <div class="sp_large">
+                <div class="cenTop">
+                    <a href="#" class="sp_current_img">
+                        <img src="__STATIC__/index/img/pro_s1.jpg" >
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#"><span class="col_a"></span></a>
+                    <div class="jq1">
+                        <div class="col_div">
+                            <div class="share">
+                                <a href="#" class="qzone sg">QQ空间
+                                </a>
+                                <a href="#" class="sina sg">新浪微博
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right fr">
+                <div class="title">
+                    <p id="good_id" hidden>{$data.good_id}</p>
+                    <p >心心</p>
+                    <p class="spName">{$data.good_name}</p>
+                    <p class="spJiesao">{$data.desc}</p>
+                    <p class="spPrice" >￥ <span id="spPrice">{$data.sell_price}</span></p>
+                    <p class="spJianjia">
+                        订单满299减40元
+                        <span class="fr">!</span>
+                    </p>
+                    <div class="showJianjiaData">
+                        <p>活动规则</p>
+                        <p>活动期间，单笔订单满299元，减40元，不累计不叠加，取最高符合条件的计算。</p>
+                    </div>
+                </div>
+                <div class="addCart">
+                    <div class="data borderT borderD">
+                        <p>
+                            <span>规格</span>
+                            <span>保存方式</span>
+                            <span>保质期</span>
+                        </p>
+                        <p>
+                            <span>500g/盒</span>
+                            <span>冷藏</span>
+                            <span>2天</span>
+                        </p>
+                    </div>
+                    <div class="caozuo">
+                        <div class="d1 fl">
+                            <span class="fl left" id="left">-</span>
+                            <input type="text" class="fl" id="good_num" maxlength="2" value="1">
+                            <span class="fl right" id="right">+</span>
+                        </div>
+                        <button id="jiaru" class="fr">加入购物车</button>
+                    </div>
+                    <script>
+                    $('#left').click(function (){
+
+                    });
+                    $('#right').click(function () {
+                        $num = parseInt($(this).prev().html());
+                        if ($num == 0) {
+
+                        }});
+                </script>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                var good_id=$('#good_id').text();
+                var good_num=$('#good_num').val();
+                var spPrice=$('#spPrice').text();
+                $('#jiaru').click(function () {
+                    $.ajax({
+                        type:'POST',
+                        data:{good_id:good_id,good_num:good_num,spPrice:spPrice},
+                        url:"{:url('Cart/add')}",
+                        success:function (data) {
+                            if(data.status=='success'){
+                                if(window.confirm(data.msg+',要去购物车看看吗？')){
+                                    location.href="{:url('Cart/index')}";
+                                }
+
+                            }
+                        }
+                    });
+
+
+                });
+            })
+
+        </script>
+        <div class="mainData fr divModel">
+            <div class="left fl">
+                {$data.content}
+        </div>
+            <div class="right fr">
+                <div class="d1 fl">
+                    <h5>农友伙伴</h5>
+                    <div class="data">
+                        <h4>心心</h4>
+                        <p>「心心」牌有机葡萄是上海光明集团旗下的有机葡萄品牌。光明集团五四有限公司是我国南方地区第一家经南京国环有机产品认证中心（OFDC）认证的有机栽培示范基地，集果品研究、生产、示范、休闲、观光为一体的综合型园区，先后被评为上海市优质果品特供基地、上海市安全优质信得过果园。在所有「心心」牌有机葡萄包装上都贴有有机防伪码可以查询是否有机正品，同时市民可以通过手机客户端扫描溯源二维码，了解有机葡萄的整个生产过程。</p>
+                        <p>
+                            <button class="goNongchang">去农场</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="d1 fl">
+                    <h5>心心的相关产品</h5>
+                    <div class="data">
+                        <div class="modelI fl">
+                            <dl>
+                                <dd>
+                                    <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                    <div class="youhuiDiv">
+                                        <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                    </div>
+                                    <div class="numDiv">
+                                        <span>0</span>
+                                        <button class="reduceBtn">-</button>
+                                        <button class="addBtn">+</button>
+                                    </div>
+                                </dd>
+                                <dt>
+                                <h4><a href="">生态种植板栗南瓜</a></h4>
+                                <p>
+                                    <button>君禾园</button>
+                                    <span class="likeP">1250</span>g/份
+                                </p>
+                                <p class="money">￥<span class="moneySpan">25.00</span></p>
+                                </dt>
+                            </dl>
+                        </div><!--1-->
+                        <div class="modelI fl">
+                            <dl>
+                                <dd>
+                                    <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                    <div class="youhuiDiv">
+                                        <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                    </div>
+                                    <div class="numDiv">
+                                        <span>0</span>
+                                        <button class="reduceBtn">-</button>
+                                        <button class="addBtn">+</button>
+                                    </div>
+                                </dd>
+                                <dt>
+                                <h4><a href="">生态种植板栗南瓜</a></h4>
+                                <p>
+                                    <button>君禾园</button>
+                                    <span class="likeP">1250</span>g/份
+                                </p>
+                                <p class="money">￥<span class="moneySpan">25.00</span></p>
+                                </dt>
+                            </dl>
+                        </div><!--1-->
+                    </div>
+                </div>
+                <div class="d1 fl">
+                    <h5>相关文章</h5>
+                    <div class="data">
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>
+
+</div>
+
+<!--底部、回到顶部按钮、客服按钮-->
+{:widget('Ipublic/footer')}
+</body>
+<script>
+    //商品图标选择
+    $('.sp').eq(0).css({'opacity': '1'});
+    $('.sp_current_img').children().eq(0).attr('src', '__STATIC__/index/img/pro_s1.jpg');
+    $('.sp').mousemove(function () {
+        srcIndex = $(this).index('.sp') + 1;
+        $(this).css({'opacity': '1'});
+        $('.sp').not($(this)).css({'opacity': '0.4'});
+        $('.sp_current_img').children().eq(0).attr('src', '__STATIC__/index/img/pro_s'+ srcIndex +'.jpg');
+    });
+    //显示隐藏分享选择
+    $('.jq1').mousemove(function () {
+        $(this).children().eq(0).children().eq(0).show();
+    }).mouseleave(function () {
+        $(this).children().eq(0).children().eq(0).hide();
+    });
+
+//    优惠信息
+    $('.spJianjia').hover(function () {
+        $('.showJianjiaData').toggle();
+        $(this).children().eq(0).toggle();
+    });
+</script>
+
+</html>

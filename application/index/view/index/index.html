@@ -96,11 +96,14 @@
             </div>
 
         </div>
+
         <div class="regouRight fl right">
+
+            {foreach $data as $val}
             <div class="modelI fl">
                 <dl>
                     <dd>
-                        <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                        <img src="{$val.image_url}" alt="" class="goodsImg">
                         <div class="youhuiDiv">
                             <img src="__STATIC__/index/img/5zhe.png" alt="" class="youhuiImg">
                         </div>
@@ -111,84 +114,17 @@
                         </div>
                     </dd>
                     <dt>
-                    <h4><a href="">零农残南汇8424</a></h4>
+                    <h4><a href="{:url('Products/index',['id'=>$val.good_id])}">{$val.good_name}</a></h4>
                     <p>
                         <button>原农公社</button>
-                        <span class="likeP">4500</span>g/份
+                        <span class="likeP">{$val.good_id}</span>g/份
                     </p>
-                    <p class="money">￥<span class="moneySpan">79.00</span></p>
+                    <p class="money">￥<span class="moneySpan">{$val.sell_price}</span></p>
                     </dt>
                 </dl>
             </div><!--1-->
-            <div class="modelI fl">
-                <dl>
-                    <dd>
-                        <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
-                        <div class="youhuiDiv">
-                            <img src="__STATIC__/index/img/5zhe.png" alt="" class="youhuiImg">
-                        </div>
-                        <div class="numDiv">
-                            <span>0</span>
-                            <button class="reduceBtn">-</button>
-                            <button class="addBtn">+</button>
-                        </div>
-                    </dd>
-                    <dt>
-                    <h4><a href="">零农残南汇8424</a></h4>
-                    <p>
-                        <button>原农公社</button>
-                        <span class="likeP">4500</span>g/份
-                    </p>
-                    <p class="money">￥<span class="moneySpan">79.00</span></p>
-                    </dt>
-                </dl>
-            </div><!--1-->
-            <div class="modelI fl">
-                <dl>
-                    <dd>
-                        <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
-                        <div class="youhuiDiv">
-                            <img src="__STATIC__/index/img/5zhe.png" alt="" class="youhuiImg">
-                        </div>
-                        <div class="numDiv">
-                            <span>0</span>
-                            <button class="reduceBtn">-</button>
-                            <button class="addBtn">+</button>
-                        </div>
-                    </dd>
-                    <dt>
-                    <h4><a href="">零农残南汇8424</a></h4>
-                    <p>
-                        <button>原农公社</button>
-                        <span class="likeP">4500</span>g/份
-                    </p>
-                    <p class="money">￥<span class="moneySpan">79.00</span></p>
-                    </dt>
-                </dl>
-            </div><!--1-->
-            <div class="modelI fl">
-                <dl>
-                    <dd>
-                        <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
-                        <div class="youhuiDiv">
-                            <img src="__STATIC__/index/img/5zhe.png" alt="" class="youhuiImg">
-                        </div>
-                        <div class="numDiv">
-                            <span>0</span>
-                            <button class="reduceBtn">-</button>
-                            <button class="addBtn">+</button>
-                        </div>
-                    </dd>
-                    <dt>
-                    <h4><a href="">零农残南汇8424</a></h4>
-                    <p>
-                        <button>原农公社</button>
-                        <span class="likeP">4500</span>g/份
-                    </p>
-                    <p class="money">￥<span class="moneySpan">79.00</span></p>
-                    </dt>
-                </dl>
-            </div><!--1-->
+{/foreach}
+
             <div class="fc"></div><!--清除浮动，换行-->
             <div class="modelI fl">
                 <dl>
@@ -291,6 +227,7 @@
             <a href="#"><h4>更多新到尖货 >></h4></a>
         </div>
         <div class="right fl">
+
             <div class="modelI fl">
                 <dl>
                     <dd>

@@ -19,7 +19,7 @@
                             <a href="">
                                 <div class="hDiv borderD">
                                     <img src="./img/column1.jpg" alt="">
-                                    <p><a href="">四时菜蔬</a></p>
+                                    <p><a href="{:url('Product/showProduct')}">四时菜蔬</a></p>
                                 </div>
                             </a>
                             <div>
@@ -227,6 +227,13 @@
                 <!--购物车-->
                 <div class="cart fl">
                     <div class="cartA"><span id="cartNum">0</span></div>
+                    <script>
+                        $(function () {
+                            $('#cartNum').click(function () {
+                                location.href="{:url('Cart/index')}";
+                            });
+                        });
+                    </script>
                     <div class="cartDiv">
                         <div class="sanjiaoxing"></div>
                         <div class="cartData">
@@ -274,7 +281,14 @@
                                     </p>
                                 </div>
                                 <div class="btn">
-                                    <button id="goToGouwulan" class="fl">前往购物篮</button>
+                                    <button id="goToGouwulan" >前往购物篮</button>
+                                    <script>
+                                        $(function () {
+                                            $('#goToGouwulan').click(function () {
+                                                location.href="{:url('Cart/index')}";
+                                            });
+                                        });
+                                    </script>
                                 </div>
                             </div>
                         </div>
