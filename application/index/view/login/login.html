@@ -26,14 +26,14 @@
 
                 <p>校验码</p>
                 <div style="margin-left: 0px;" >
-                    <input style="width:100px;vertical-align:middle" type="text" placeholder="填写验证码" name="yanzhengma" id="shortIn">
+                    <input style="width:100px;vertical-align:middle" type="text" placeholder="填写验证码" name="code" id="shortIn">
                     <img border="0" style="vertical-align:middle;margin-left: 20px" width="200px" src="{:captcha_src()}" onclick="this.src='{:captcha_src()}'" alt="captcha">
                 </div>
                 <a href="" style="font-size: 0.8em">看不清楚?换一个</a>
 
                 <p><label><input type="checkbox" class="checkbox" checked>记住账号</label></p>
                 <p><input type="submit" value="登录" class="submit"></p>
-                <p><a href="{:url('Regist/modify')}">忘记密码？</a></p>
+                <p><a href="{:url('Modify/index')}">忘记密码？</a></p>
             </form>
         </div>
         <div class="right fl">

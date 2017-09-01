@@ -5,7 +5,7 @@ use think\Controller;
 class Member extends Base {
 
     public function index(){
-        $data = db('member')->paginate(2);
+        $data = db('member')->paginate(10);
         $this->assign('data',$data);
         return $this->fetch('list');
     }

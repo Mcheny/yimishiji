@@ -17,8 +17,8 @@ class Login extends Controller{
         $data = [
             'username' => input('username'),
             'password' => input('password'),
-//            'code' => input('code'),
         ];
+        $code = input('code');
         //验证用户名,密码和验证码
         if($data['username']==''|| !$data['username']){
             return $this->error('用户名不能为空,请输入用户名...');
@@ -26,27 +26,24 @@ class Login extends Controller{
         if($data['password']==''|| !$data['password']){
             return $this->error('密码不能为空，请输入密码...');
         }
-//        if($data['code']==''|| !$data['code']){
-//            return $this->error('验证码不能为空，请输入验证码...');
-//        }
+        if($code==''|| !$code){
+            return $this->error('验证码不能为空，请输入验证码...');
+        }
+        //        判断验证码是否错误
+        if(!captcha_check($code)){
+           return $this->error('验证码错误，请重新输入...');
+        }
 //        判断用户名格式是否错误[手机号码格式]
-
-//        判断验证码是否错误
-//        if(!captcha_check($data['code'])){
-//            return $this->error('验证码错误，请重新输入...');
-//        }
         //判断用户名密码是否存在
-        $arr = db('member')->where(['username'=>$data['username']])->find();
+        $res=[
+            'username'=>$data['username'],
+            'password'=>$data['password']
+        ];
+        $arr = db('member')->where($res)->find();
 
         if(!$arr){
             return $this->error('用户名或密码错误，请重新输入...');
         }
-//        if($arr['password'] != md5($data['password'])){
-//            return $this->error('用户名或密码错误，请重新输入...');
-//        }
-//        if($arr['is_lock'] != 0) {
-//            return $this->error('该管理员账号已被冻结');
-//        }
         session('member',$arr);
         return $this->success('登录成功，极速加载中...',url('Index/index'));
     }
