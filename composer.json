@@ -20,7 +20,12 @@
         "topthink/framework": "^5.0",
 
         "topthink/think-image": "^1.0",
+<<<<<<< HEAD
+=======
+
+>>>>>>> a7464cab6aeba0aecaf47360ca3262aeb991ea24
         "topthink/think-captcha": "^1.0"
+
     },
     "extra": {
         "think-path": "thinkphp"

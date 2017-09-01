@@ -9,7 +9,7 @@ class Index  extends Controller
         $data=db('cate')->query('SELECT g.good_id,g.good_name,g.sell_price,i.image_url  FROM yimi_goods as g LEFT JOIN yimi_image as i ON g.good_id=i.goods_id WHERE cate_id=1 ');
         //dump($data);
         $this->assign('data',$data);
-       return $this->fetch('index');
+        return $this->fetch('index');
     }
     //登陆后 跳到购物车页面
     public  function enter(){

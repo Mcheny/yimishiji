@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品分类_四时菜蔬_一米市集</title>
+    {:widget('Ipublic/head')}
+    <link rel="stylesheet" href="__STATIC__/index/css/products.css">
+</head>
+<body>
+<!--顶部-->
+<div class="top"></div>
+<!--主要内容-->
+<div class="container noSec">
+    <!--头部-->
+    {:widget('Ipublic/header')}
+    <!--主模块-->
+    <div class="main">
+        <div class="head">
+            <div class="left fl">
+                <img src="__STATIC__/index/img/pro_1.jpg" alt="">
+            </div>
+            <div class="center fl">
+                <div class="window">
+                    <div class="row">
+                        <img src="__STATIC__/index/img/pro_w_1.jpg" alt="" class="active">
+                        <img src="__STATIC__/index/img/pro_w_2.jpg" alt="">
+                        <img src="__STATIC__/index/img/pro_w_3.jpg" alt="">
+                        <img src="__STATIC__/index/img/pro_w_4.jpg" alt="">
+                        <img src="__STATIC__/index/img/pro_w_5.jpg" alt="">
+                        <div class="btn">
+                            <span><</span>
+                            <span>></span>
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <span class='active'>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right fr">
+                <div class="d1">
+                    <a href="#"><img src="__STATIC__/index/img/pro_r1.jpg" alt=""></a>
+                </div>
+                <div class="d2">
+                    <a href="#"><img src="__STATIC__/index/img/pro_r2.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="body divModel">
+            <div class="left fl">
+                <div class="list">
+                    <div class="opBtn fl"></div>
+                    <div class="fr opData">
+                        <div class="title">
+                            <h4>分类</h4>
+                        </div>
+                        <div class="seclectDiv">
+                            <ul>
+                                <li><a href="#"><label><input type="checkbox"><span>叶菜类</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>根茎类</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>茄果瓜花类</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>豆类</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>菌菇类</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>葱姜蒜和香料</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>豆制品</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>冷藏冷冻菜蔬</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>蔬菜花卉盆栽</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>番茄</span></label></a></li>
+                                <li><a href="#"><span>清除</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="fr opData">
+                        <div class="title">
+                            <h4>价格范围</h4>
+                        </div>
+                        <div class="seclectDiv">
+                            <ul>
+                                <p>
+                                    <div class='bg'>
+                                        <div class = 'leftBtn'></div>
+                                        <div class = 'rightBtn'></div>
+                                    </div>
+                                    <div class='col'></div>
+                                </p>
+                                <p>
+                                    <input type="text" class="leftNum " value="0">
+                                        ~
+                                    <input type="text" class="rightNum "  value="90">
+
+                                </p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <div class="opBtn fl"></div>
+                    <div class="fr opData">
+                        <div class="title">
+                            <h4>农场&品牌</h4>
+                        </div>
+                        <div class="seclectDiv">
+                            <ul>
+                                <li><a href="#"><label><input type="checkbox"><span>旭耕农场</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>玫瑰庄园</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>争荣农场</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>岑谷生态农场</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>百欧欢</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>九洲丰园</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>璟欣</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>圣纳茜斯</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>Maruzen</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>东北农嫂</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>君禾园</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>青泥巴</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>德添</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>甲石合作社</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>Mr.Moolenaar</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>豆味道</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>青宁</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>沙拉瓶子</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>紫旭谷</span></label></a></li>
+                                <li><a href="#"><span>清除</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <div class="opBtn fl"></div>
+                    <div class="fr opData">
+                        <div class="title">
+                            <h4>做个选择</h4>
+                        </div>
+                        <div class="seclectDiv">
+                            <ul>
+                                <li><a href="#"><label><input type="checkbox"><span>可持续发展</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>小农栽种</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>天然无毒</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>本地食材</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>一米亲访</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>古法手作</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>无负面添加</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>自然农法</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>优质产地</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>无麸质</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>纯天然原料</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>非转基因</span></label></a></li>
+                                <li><a href="#"><label><input type="checkbox"><span>有机生产</span></label></a></li>
+                                <li><a href="#"><span>清除</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right fr">
+                <div class="head">
+                    <div class="pro_count fl">
+                        共 <span>97</span> 件
+                    </div>
+                    <div class="btn fr ">价格</div>
+                    <div class="btn fr">购买</div>
+                    <div class="btn fr">评价</div>
+                    <div class="btn fr strongTag">综合</div>
+                </div>
+                <div class="body">
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                    <div class="modelI fl">
+                        <dl>
+                            <dd>
+                                <img src="__STATIC__/index/img/putao.jpg" alt="" class="goodsImg">
+                                <div class="youhuiDiv">
+                                    <img src="__STATIC__/index/img/new.png" alt="" class="youhuiImg">
+                                </div>
+                                <div class="numDiv">
+                                    <span>0</span>
+                                    <button class="reduceBtn">-</button>
+                                    <button class="addBtn">+</button>
+                                </div>
+                            </dd>
+                            <dt>
+                            <h4><a href="">生态种植板栗南瓜</a></h4>
+                            <p>
+                                <button>君禾园</button>
+                                <span class="likeP">1250</span>g/份
+                            </p>
+                            <p class="money">￥<span class="moneySpan">25.00</span></p>
+                            </dt>
+                        </dl>
+                    </div><!--1-->
+                </div>
+                <div class="foot fc">
+                    <div class="pre fl">
+                        <span class="fl">👈上一页</span>
+                        <ul class="fl">
+                            <li><span class="active">1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                        </ul>
+                        <span class="fl">下一页👉</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--底部、回到顶部按钮、客服按钮-->
+{:widget('Ipublic/footer')}
+</body>
+<script>
+    //轮播图
+
+    row = document.querySelector('.window .row');
+    img = document.querySelectorAll('.window img');
+    tag = document.querySelectorAll('.window .tag span');
+    btn = document.querySelectorAll('.window .btn span');
+    var index = 0;
+    // 自动轮播
+    var auto = setInterval(function(){
+        index++;
+        if (index > img.length - 1)
+            index = 0;
+        go();
+    },1000);
+
+    // 轮播函数
+    function go(){
+        for(var i = 0; i < img.length; i++){
+            if (index > img.length - 1)
+                index = 0;
+            if (index < 0)
+                index = img.length - 1;
+
+            if(i == index){
+                img[i].style.display = 'inline-block';
+                tag[i].setAttribute('class','active');
+            }
+            else{
+                img[i].style.display = 'none';
+                removeClass(tag[i],'active');
+            }
+        }
+    }
+
+    for(var i = 0; i < tag.length; i++){
+        tag[i].onmouseenter = function(){
+            clearInterval(auto);
+            index = this.innerHTML-1;
+            go();
+        }
+        tag[i].onmouseleave = function(){
+            auto = setInterval(function(){
+                index++;
+                if (index > img.length - 1)
+                    index = 0;
+                go();
+            },1000);
+        }
+    }
+    btn[0].onmouseenter = function(){
+        this.style.opacity = 1;
+    }
+    btn[1].onmouseenter = function(){
+        this.style.opacity = 1;
+    }
+    btn[0].onmouseleave = function(){
+        this.style.opacity = 0.5;
+    }
+    btn[1].onmouseleave = function(){
+        this.style.opacity = 0.5;
+    }
+    btn[0].onclick = function(){
+        clearInterval(auto);
+        index--;
+        go();
+    }
+    btn[1].onclick = function(){
+        clearInterval(auto);
+        index++;
+        go();
+    }
+
+    row.onmouseenter = function(){
+        clearInterval(auto);
+    }
+    row.onmouseleave = function(){
+        auto = setInterval(function(){
+            index++;
+            if (index > img.length - 1)
+                index = 0;
+            go();
+        },1000);
+    }
+
+    function removeClass(ele, className){
+        var old = ele.className;
+        var index = old.indexOf(className);
+        if( index >= 0){
+            var oldArr = old.split('');
+            oldArr.splice(index,className.length);
+            ele.className = oldArr.join('');
+        }
+    }
+    //显示隐藏
+    $('.opBtn').attr('isOpen','1');
+    $('.opBtn').click(function () {
+        $(this).next().find('.seclectDiv').toggle();
+        if($(this).attr('isOpen') == 1){
+            $(this).css({'background-size':'8px','background-repeat':'no-repeat','background-image':'url(__STATIC__/index/img/pro_close.png)'});
+            $(this).attr('isOpen',0);
+        }else{
+            $(this).css({'background-size':'12px','background-image':'url(__STATIC__/index/img/pro_open.png)'});
+            $(this).attr('isOpen',1);
+        }
+    });
+
+    //左侧选择框位置
+    //    $(window).scroll(function () {
+    //        hei = $('.main .body .left').height();
+    //        scroHei = $(window).scrollTop();
+    //        allH = $(document).height();
+    //        if(topH > allH - 870 ){
+    //            topH2 = allH - 870 - hei;
+    //            $('.main .body .left').css({'top': topH2 + 'px'});
+    //
+    //        }else if(scroHei >= hei-450){
+    //            topH = scroHei - hei +450;
+    //            $('.main .body .left').css({'top': topH + 'px'});
+    //        }
+    //    });
+
+    //    右侧排序
+    $('.main .body .right .head .btn').not($('.main .body .right .head .btn').eq(3)).attr('up','0');
+    $('.main .body .right .head .btn').click(function () {
+
+        if($(this).hasClass('strongTag') && $(this).attr('up') == 0){
+            if ($(this).index('.main .body .right .head .btn') == 3){
+            }else{
+                $(this).css({'background':'url(__STATIC__/index/img/icon_sortAroow_up.png) no-repeat #86b6c5','background-position':'10px 7px','background-size':'9px'});
+                $(this).attr('up',1);
+                $('.main .body .right .head .btn').not(this).attr('up',0);
+                $('.main .body .right .head .btn').not(this).css({'background':'#d6e2e6'});
+            }
+
+        }else if($(this).hasClass('strongTag') && $(this).attr('up') == 1){
+            $(this).css({'background':'url(__STATIC__/index/img/icon_sortAroow_down.png) no-repeat #86b6c5','background-position':'10px 7px','background-size':'9px'});
+            $(this).attr('up',0);
+            $('.main .body .right .head .btn').not(this).attr('up',0);
+            $('.main .body .right .head .btn').not(this).css({'background':'#d6e2e6'});
+        }else {
+            $('.main .body .right .head .btn').not(this).attr('up',0);
+            $('.main .body .right .head .btn').not(this).css({'background':'#d6e2e6'});
+            $('.main .body .right .head .btn').removeClass('strongTag');
+            $(this).addClass('strongTag');
+            $(this).css({'background':'url(__STATIC__/index/img/icon_sortAroow_down.png) no-repeat #86b6c5','background-position':'10px 7px','background-size':'9px'});
+            $(this).attr('up',0);
+        }
+    });
+
+
+//    双侧滚动条
+    left = 0;
+    right = 217;
+    btnChoise = 0;
+
+    $('.leftBtn').mousedown(function(e){
+        ox = e.pageX - left;
+        btnChoise = 1;
+    });
+    $('.rightBtn').mousedown(function(e){
+        lx = $(this).offset().left;
+        ox = e.pageX - right;
+        btnChoise = 2;
+    });
+
+    $(document).mouseup(function(){
+
+        btnChoise = 0;
+        oldWidth = parseInt($('.col').css('width'));
+
+    }).mousemove(function(e){
+
+        if(btnChoise == 1){
+            left = e.pageX - ox;
+            colL = e.pageX - ox;
+            if(left < 0)
+                left = 0;
+            if(left > right - 12)
+                left = right - 12;
+            $('.leftBtn').css({'left':left});
+
+            colWid = $('.rightBtn').offset().left - $('.leftBtn').offset().left + 12;
+            p = parseInt(left/217 * 90);
+            $('.col').css({width:colWid,left:left});
+            $('.body .left .opData .seclectDiv p .leftNum').val(p);
+        }
+
+        if(btnChoise == 2 ){
+            right =e.pageX - ox;
+            colR =e.pageX - ox;
+            if(right > 217)
+                right = 217;
+            if(right < left + 13)
+                right = left + 13;
+            $('.rightBtn').css({'left':right});
+
+            colWid = $('.rightBtn').offset().left - $('.leftBtn').offset().left + 13;
+            p = parseInt(right/217 * 90);
+            $('.col').css({width:colWid,left:left});
+            $('.body .left .opData .seclectDiv p .rightNum').val(p);
+
+        }
+
+    });
+
+</script>
+</html>

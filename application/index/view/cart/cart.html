@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>购物车_一米市集</title>
-   {:widget('Ipublic/head')}
+    {:widget('Ipublic/head')}
     <link rel="stylesheet" href="__STATIC__/index/css/cart.css">
 </head>
 <body>
@@ -97,16 +97,16 @@
                         <li class="li2"><hr></li>
                         <li class="li3"><span class="left ">购买金额</span><span class="right">￥<span class="allMoney"></span></span></li>
                         <li><span class="left">可得积分</span><span class="right"><span class="allMoney">169</span>点</span></li>
-                   <script>
-                       $(function () {
-                          $('.li3').text(function () {
-                              return '￥3.00';
-                          });
-                           $('#jiesuan').click(function () {
-                               location.href="{:url('Cart/check')}";
-                           });
-                       });
-                   </script>
+                        <script>
+                            $(function () {
+                                $('.li3').text(function () {
+                                    return '￥3.00';
+                                });
+                                $('#jiesuan').click(function () {
+                                    location.href="{:url('Cart/check')}";
+                                });
+                            });
+                        </script>
                     </ul>
                     <button class="btn1">查看优惠详情</button>
                 </div>
