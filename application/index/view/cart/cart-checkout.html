@@ -50,16 +50,16 @@
             </div>
             <!--添加地址表单-->
             <div class="addLocal">
-                <form action="javascript:;">
+                <form action=""  id="message">
                     <p>
                         <input type="text" name="name" placeholder="收货人" class="name">
                         <input type="text" name="phone" placeholder="手机/电话" class="phone">
                     </p>
                     <p>
-                        <select name="province" id="province" disabled class="sec secDis">
+                        <select name="province" id="province"  class="sec secDis">
                             <option value="上海" selected>上海</option>
                         </select>
-                        <select name="city" id="city" disabled class="sec secDis">
+                        <select name="city" id="city" class="sec secDis">
                             <option value="上海市" selected>上海市</option>
                         </select>
                         <select name="zone" id="zone" class="sec">
@@ -69,9 +69,28 @@
                         <input type="text" name="local" placeholder="收货地址" class="local">
                     </p>
                     <p>
-                        <button>保存地址</button>
+                        <button id="addAdress">保存地址</button>
                     </p>
                 </form>
+                <script>
+                    $(function () {
+                        $('#addAdress').click(function () {
+                            $.ajax({
+                                cache: true,
+                                type: "POST",
+                                url:"{:url('Cart/address')}",
+                                data:$('#message').serialize(),
+                                async: false,
+                                error: function(request) {
+                                    alert("添加失败");
+                                },
+                                success: function(data) {
+                                    alert(data.area);
+                                }
+                            });
+                        });
+                    });
+                </script>
             </div>
             <!--收货时间-->
             <div class="model">
@@ -234,8 +253,15 @@
                 <hr class="fc">
                 <p class="fc"><span class="fl">应付金额</span><span class="fr">￥<span>58.00</span></span></p>
                 <p class="fc">
-                    <button id="tijiaoBtn" class="fl">订单结算</button>
+                    <button id="tijiaoBtn" class="fl" type="submit">订单结算</button>
                 </p>
+                <script>
+                    //               $(function () {
+                    //                   $("form").submit(function(e){
+                    //                       alert("Submitted");
+                    //                   });
+                    //               });
+                </script>
                 <p class="fc"><label><input type="checkbox" name="buzai">不在商品清单上打印价格。</label></p>
             </div>
             <!--保证以上浮动块能正常显示，不会重叠-->

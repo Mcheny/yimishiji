@@ -1,15 +1,8 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Administrator
- * Date: 2017/8/30
- * Time: 15:35
- */
 namespace app\index\controller;
-
 use think\Controller;
-
 class Regist extends Controller{
+<<<<<<< HEAD
     public function index(){
         return $this->fetch('regist');
     }
@@ -46,4 +39,7 @@ class Regist extends Controller{
         return $this->success('恭喜你注册成功，马上进入用户页面，请稍等...',url('Login/index'));
 
     }
+=======
+
+>>>>>>> 02b7416fbd0cbb365b8efc195461311d9e52c555
 }

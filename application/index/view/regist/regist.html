@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>注册_一米市集</title>
+<<<<<<< HEAD
+    <?php
+        require('head.php');
+    ?>
+    <link rel="stylesheet" href="./css/regist.css">
+=======
     {:widget('Ipublic/head')}
     <link rel="stylesheet" href="__STATIC__/index/css/regist.css">
+>>>>>>> a7464cab6aeba0aecaf47360ca3262aeb991ea24
 </head>
 <body>
 <!--顶部-->
@@ -12,16 +19,29 @@
 <!--主要内容-->
 <div class="container noSec">
     <!--头部-->
+<<<<<<< HEAD
+    <?php
+    require('header.php');
+    ?>
+=======
     {:widget('Ipublic/header')}
+>>>>>>> a7464cab6aeba0aecaf47360ca3262aeb991ea24
     <!--主模块-->
     <div class="section">
         <div class="left fl">
             <h1>会员注册</h1>
             <!--注册表单-->
+<<<<<<< HEAD
+            <form action="javascript:;" method="post">
+                <p>
+                    <span>手机号</span>
+                    <input type="text" placeholder="请填写正确手机号" name="phone" maxlength="11">
+=======
             <form action="{:url('Regist/regist')}" method="post">
                 <p>
                     <span>手机号</span>
                     <input type="text" placeholder="请填写正确手机号" name="username" maxlength="11">
+>>>>>>> a7464cab6aeba0aecaf47360ca3262aeb991ea24
                     <br>
                     <lebel class="s2"><span class="s1">!</span>请填写正确的手机号</lebel>
                 </p>
@@ -45,6 +65,26 @@
                     <lebel class="s2"><span class="s1">!</span>密码与确认密码不相符，请重新填写</lebel>
                 </p>
                 <p>
+<<<<<<< HEAD
+                    <span>校验码</span>
+                    <input type="text" placeholder="请填写校验码" name="jiaoyanma" class="shortIn">
+                    <img src="holder.js/65x20" alt="验证码">
+                    <a href="">看不清楚?换一个</a>
+                    <lebel class="s2"><span class="s1">!</span>请输入校验码</lebel>
+                </p>
+                <p>
+                    <span>验证码</span>
+                    <input type="text" placeholder="请填写验证码" name="yanzhengma" class="shortIn">
+                    <button>获取短信验证码</button>
+                    <br>
+                    <lebel class="s2"><span class="s1">!</span>本项必填</lebel>
+
+                </p>
+                <p class="tishi">
+                    <span> </span>
+                    如未收到短信，请联络客服或拨打400-655-1212</p>
+                <p>
+=======
                     <div style="margin-left: 0px;" >
                     <span>校验码</span>
                         <input style="width:70px;vertical-align:middle;margin-left: 40px" type="text" placeholder="填写验证码" name="code" id="shortIn">
@@ -64,6 +104,7 @@
                     <!--<span> </span>-->
                     <!--如未收到短信，请联络客服或拨打400-655-1212</p>-->
                 <!--<p>-->
+>>>>>>> a7464cab6aeba0aecaf47360ca3262aeb991ea24
                     <label>
                         <input type="checkbox" class="checkbox">
                         我已阅读并同意 <a href="">会员注册协议</a> 和 <a href="">隐私保护政策</a>
@@ -82,7 +123,13 @@
 </div>
 
 <!--底部、回到顶部按钮、客服按钮-->
+<<<<<<< HEAD
+<?php
+require('footer.php');
+?>
+=======
 {:widget('Ipublic/footer')}
+>>>>>>> a7464cab6aeba0aecaf47360ca3262aeb991ea24
 
 </body>
 

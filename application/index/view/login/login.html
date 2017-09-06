@@ -18,28 +18,37 @@
         <div class="left fl">
             <h1 class="borderD">登录</h1>
             <!--登录表单-->
-            <form action="{:url('Login/login')}">
+            <form action="{:url('Index/enter')}" method="post">
                 <p>登录账号</p>
-                <p><input type="text" placeholder="用户名/邮箱地址/手机号" name="username"></p>
+                <p><input type="text" placeholder="用户名/邮箱地址/手机号" name="name"></p>
                 <p>密码</p>
                 <p><input type="password" placeholder="填写密码" name="password"></p>
 
                 <p>校验码</p>
+<<<<<<< HEAD
                 <div style="margin-left: 0px;" >
                     <input style="width:100px;vertical-align:middle" type="text" placeholder="填写验证码" name="code" id="shortIn">
                     <img border="0" style="vertical-align:middle;margin-left: 20px" width="200px" src="{:captcha_src()}" onclick="this.src='{:captcha_src()}'" alt="captcha">
                 </div>
+=======
+                <input type="text" placeholder="填写验证码" name="yanzhengma" id="shortIn">
+                <img src="" alt="" width="65px" height="20px">
+>>>>>>> 02b7416fbd0cbb365b8efc195461311d9e52c555
                 <a href="" style="font-size: 0.8em">看不清楚?换一个</a>
 
                 <p><label><input type="checkbox" class="checkbox" checked>记住账号</label></p>
                 <p><input type="submit" value="登录" class="submit"></p>
+<<<<<<< HEAD
                 <p><a href="{:url('Modify/index')}">忘记密码？</a></p>
+=======
+                <p><a href="">忘记密码？</a></p>
+>>>>>>> 02b7416fbd0cbb365b8efc195461311d9e52c555
             </form>
         </div>
         <div class="right fl">
             <div class="bg"></div>
             <div class="regist">
-                <p>我不是会员，<a href="{:url('Regist/index')}">要加入</a></p>
+                <p>我不是会员，<a href="regist.php">要加入</a></p>
             </div>
         </div>
     </div>

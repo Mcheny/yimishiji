@@ -1,18 +1,11 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Administrator
- * Date: 2017/8/30
- * Time: 15:33
- */
 namespace app\index\controller;
-
 use think\Controller;
-
 class Login extends Controller{
-    public function index(){
+    function index(){
         return $this->fetch('login');
     }
+<<<<<<< HEAD
     public function login(){
         $data = [
             'username' => input('username'),
@@ -47,4 +40,6 @@ class Login extends Controller{
         session('member',$arr);
         return $this->success('登录成功，极速加载中...',url('Index/index'));
     }
+=======
+>>>>>>> 02b7416fbd0cbb365b8efc195461311d9e52c555
 }
